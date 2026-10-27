@@ -433,7 +433,7 @@ def main(argv=None):
     ap.add_argument("--xopt", default=None, metavar="V",
                     help="known optimum: scalar ('1.0') or comma list "
                          "('0,0,0'); panel (d) then shows |mean - xopt|")
-    ap.add_argument("--xaxis", choices=("evals", "iters"), default="evals",
+    ap.add_argument("--xaxis", choices=("evals", "iters"), default="iters",
                     help="abscissa: function evaluations or iterations")
     ap.add_argument("--title", default=None, help="override the figure title")
     ap.add_argument("--max-lines", type=int, default=30, metavar="K",
