@@ -1,0 +1,14 @@
+#PBS -N SAT2019
+#PBS -l select=1:ncpus=2:mem=8gb
+#PBS -l walltime=08:00:00
+#PBS -j oe
+#PBS -o /home/gubidubi/cadical/results/benchmark2019_base_res/
+
+module load gcc/12.4.0
+
+for (( i=$INICIO; i<=$FIM; i++ )); do
+    FILENAME=$(sed -n "${i}p" cadical/file_list.txt)
+    [[ -z "$FILENAME" ]] && continue
+    echo -n "$FILENAME "
+    ./cadical/cadical/build/cadical -n -t 5000 --seed=0 "cadical/$FILENAME"
+done

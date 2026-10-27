@@ -1,0 +1,11 @@
+#PBS -N SAT2019
+#PBS -l select=1:ncpus=2:mem=8gb
+#PBS -l walltime=08:00:00
+#PBS -j oe
+#PBS -o /home/gubidubi/cadical/results/benchmark2019_stag_res/
+
+for (( i=$INICIO; i<=$FIM; i++ )); do
+	FILENAME=$(sed -n "${i}p" cadical/file_list.txt)
+	echo -n "$FILENAME "
+	./cadical/cadical-stagnation/build/cadical -n -q --restartbasefast=11 --restartbaseslow=301 -t 5000 --seed=0 "cadical/$FILENAME"
+done

@@ -1,0 +1,17 @@
+SAT2019/satcoin-genesis-SAT-10-sc2018.cnf.xz
+SAT2019/frb-40-19-1-mgd_c18.cnf.xz
+SAT2019/Mario-t-hard-2_c18.cnf.xz
+SAT2019/Mario-t-hard-5_c18.cnf.xz
+SAT2019/GracefulGraph-K05-P02_c18.cnf.xz
+SAT2019/Nb7T44-sc2017.cnf.xz
+SAT2019/hcp_d12_12.cnf.xz
+SAT2019/aaai10-planning-ipc5-pathways-17-step21-sc2011.cnf.xz
+SAT2019/Bibd-sc-10-03-08_c18.cnf.xz
+SAT2019/Mickey_out250_known_last146_0.cnf.xz
+SAT2019/Mickey_out250_known_last147_0.cnf.xz
+SAT2019/sha1r17m75a_p.cnf.xz
+SAT2019/f6nidw-sc2012.cnf.xz
+SAT2019/toughsat_23bits_0.cnf.xz
+SAT2019/6s169-opt-sc2014.cnf.xz
+SAT2019/atco_enc2_opt2_10_21-sc2014.cnf.xz
+

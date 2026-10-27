@@ -1,0 +1,6 @@
+outputX -> result of an optmization run
+oltoutputs -> outputX for low X
+distributedoptmizationv2.py -> main optmization python script
+plot_debug -> default plots of cma.plot() (uses the data of ./outcmaes/)
+plot_outcmaes -> custom plots (uses the data of ./outcmaes/, vibe coded)
+

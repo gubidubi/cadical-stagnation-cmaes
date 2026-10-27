@@ -1,0 +1,45 @@
+A otimização é iniciada com distoptmize2019.sh, a saída é uma pasta outcmaes (usada para gerar os gráficos com plot_outcmaes.py na maquina local) e os arquivos em cadical/results/ (stdout)
+
+Comandos utilizados no cluster:
+bash benchmark2019full_stag.sh   (executa o solver cadical stagnation para todas as instâncias do benchmark de 2019, os parametros utilizados devem ser editados diretamento em benchmark2019_stag)
+qsub distoptmize2019.sh   (inicia o CMAES, todas as configurações devem ser editadas nos scripts)
+qsub -v FILE_INDEX=7 benchmark2019_single.sh      (executa uma unica instância do benchmark)
+module load gcc/12.4.0         (carrega compilador de C++)
+module load python/3.12.8      (carrega python)
+source meu_env/bin/activate    (ativa env de python)
+
+Arquivos no cluster Euler:
+outcmaes                          (pasta gerada na última otimização)
+run_mpi_task.sh                   (script auxiliar para outros scripts)
+cadical                           (pasta com quase tudo do trabalho)
+- cadical                         (git clone de CaDiCal)
+- cadical-stagnation              (git clone de CaDiCal-stagnation, criado por Ballock)
+- CMAES                           (pasta com script python de otimização)
+  └─ distributedoptimizationv2.py (script python de otimização, utilizado no script distoptmize2019)
+- easy_list.txt                   (path de algumas instâncias do SAT2019, utilizada por scripts)
+- easy_list2.txt                  (path de algumas instâncias do SAT2019, utilizada por scripts)
+- file_list.txt                   (path de todas instâncias do SAT2019, utilizada por scripts)
+- list2026.txt                    (path de todas instâncias do SAT2026, utilizada por scripts)
+- nonIND_list.txt                 (path de algumas instâncias do SAT2019, utilizada no CMAES)
+- meu_env                         (env de python, utilizado em alguns scripts, use "pip install -r requirements.txt", com o requirements.txt desse repositório)
+- results                         (pasta com stdout das execuções de todos os scripts)
+  └─ benchmark2019_base_res
+  └─ benchmark2019_stag_res
+  └─ benchmark2026_base_res
+  └─ benchmark2026_stag_res
+distoptmize2019_res
+- SAT2019                         (instâncias do SAT2019 baixadas, formato .cnf.xz)
+- SAT2026                         (instâncias do SAT2026 baixadas, formato .cnf.xz)
+- scripts
+  └─ benchmark2019_base           (executa algumas instâncias de SAT2019 com o baseline em um job)
+  └─ benchmark2019_single.sh      (executa uma instância de SAT2019 com o baseline)
+  └─ benchmark2019_stag           (executa algumas instâncias de SAT2019 com o stagnation em um job)
+  └─ benchmark2019full_base.sh    (executa todas as instâncias de SAT2019 com o baseline, 5 por job)
+  └─ benchmark2019full_stag.sh    (executa todas as instâncias de SAT2019 com o stagnation, 5 por job)
+  └─ benchmark2026_base           
+  └─ benchmark2026_stag           
+  └─ benchmark2026full_base.sh    
+  └─ benchmark2026full_stag.sh    
+  └─ distoptmize2019.sh           (CMAES distribuído em 4 nós)
+  └─ optmize2019.sh               (CMAES em um único nó, script descontinuado)
+  
